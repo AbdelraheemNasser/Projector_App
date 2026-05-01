@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'video_screen.dart';
+import '../models/doctor.dart';
+import 'home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -29,17 +30,34 @@ class _LoginScreenState extends State<LoginScreen> {
 
     await Future.delayed(Duration(seconds: 1));
 
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setString('username', _usernameController.text);
-    await prefs.setString('password', _passwordController.text);
-    await prefs.setBool('isLoggedIn', true);
+    // Authenticate with hardcoded accounts
+    final doctor = DoctorAccounts.authenticate(
+      _usernameController.text,
+      _passwordController.text,
+    );
 
     setState(() => _isLoading = false);
 
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(builder: (context) => const VideoScreen()),
-    );
+    if (doctor != null) {
+      // Save login session
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setString('username', doctor.username);
+      await prefs.setBool('isLoggedIn', true);
+
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => HomeScreen(doctor: doctor),
+        ),
+      );
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('اسم المستخدم أو كلمة المرور غير صحيحة'),
+          backgroundColor: Colors.red,
+        ),
+      );
+    }
   }
 
   @override

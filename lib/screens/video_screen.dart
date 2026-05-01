@@ -3,9 +3,12 @@ import 'package:flutter/services.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:video_player/video_player.dart';
 import 'dart:io';
+import '../models/doctor.dart';
 
 class VideoScreen extends StatefulWidget {
-  const VideoScreen({super.key});
+  final Doctor doctor;
+
+  const VideoScreen({super.key, required this.doctor});
 
   @override
   State<VideoScreen> createState() => _VideoScreenState();
@@ -101,6 +104,19 @@ class _VideoScreenState extends State<VideoScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () => Navigator.pop(context),
+        ),
+        title: Text(
+          'محاضرات الفيديو',
+          style: TextStyle(color: Colors.white),
+        ),
+        centerTitle: true,
+      ),
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -116,17 +132,7 @@ class _VideoScreenState extends State<VideoScreen> {
         child: SafeArea(
           child: Column(
             children: [
-              Padding(
-                padding: EdgeInsets.all(20),
-                child: Text(
-                  'عرض المحاضرات',
-                  style: TextStyle(
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
+              SizedBox(height: 10),
               Expanded(
                 child: Center(
                   child: SingleChildScrollView(
