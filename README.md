@@ -1,14 +1,14 @@
-# 📱 Video Caster - Projector App
+#  Video Caster - Projector App
 
 A simple and elegant Flutter application for casting videos from your Android device to external displays via Miracast/Wireless Display.
 
-## ✨ Features
+##  Features
 
-- 📂 **Video File Picker** - Select any video from your device storage
-- 📡 **Wireless Casting** - Connect to projectors and external displays via Miracast
-- 🎬 **Auto-Play** - Automatically plays video in fullscreen when connected
-- 🎨 **Minimal Design** - Clean and simple user interface
-- ⚡ **Fast & Lightweight** - Optimized for performance
+-  **Video File Picker** - Select any video from your device storage
+-  **Wireless Casting** - Connect to projectors and external displays via Miracast
+-  **Auto-Play** - Automatically plays video in fullscreen when connected
+-  **Minimal Design** - Clean and simple user interface
+-  **Fast & Lightweight** - Optimized for performance
 
 ## 🚀 Getting Started
 
@@ -67,13 +67,13 @@ build/app/outputs/flutter-apk/app-arm64-v8a-release.apk
   - `video_player` - For video playback
   - `permission_handler` - For storage permissions
 
-## 📱 Compatibility
+##  Compatibility
 
 - **Minimum Android Version**: Android 5.0 (API 21)
 - **Target Android Version**: Android 12+ (API 31+)
 - **Tested Devices**: Samsung, Oppo, and other Android devices with Miracast support
 
-## 🏗️ Project Structure
+##  Project Structure
 
 ```
 lib/
@@ -108,7 +108,7 @@ Key configurations in `AndroidManifest.xml`:
 <uses-permission android:name="android.permission.INTERNET"/>
 ```
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
@@ -118,22 +118,22 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📝 License
+##  License
 
 This project is open source and available under the [MIT License](LICENSE).
 
-## 👨‍💻 Author
+##  Author
 
 **Abdelraheem Nasser**
 - GitHub: [@AbdelraheemNasser](https://github.com/AbdelraheemNasser)
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - Flutter team for the amazing framework
 - Android team for Miracast/Wireless Display support
 - All contributors and testers
 
-## 📞 Support
+##  Support
 
 If you have any questions or issues, please open an issue on GitHub.
 
